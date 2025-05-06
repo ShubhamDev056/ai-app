@@ -14,12 +14,13 @@ import {
   Select,
   Alert,
   CircularProgress,
-  // Box,
+  Box,
 } from "@mui/material";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import TopHeader from "./components/ui/TopHeader";
 import Header from "./components/ui/Header";
+import Footer from "./components/ui/Footer";
 
 // Define the schema with Yup for validation
 const schema = yup.object().shape({
@@ -100,13 +101,13 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       {/* Header */}
       <TopHeader />
       <Header />
 
       {/* Main Content */}
-      <Container sx={{ marginTop: "40px" }}>
+      <Container sx={{ marginTop: "40px", flexGrow: 1 }}>
         <Grid container justifyContent="center">
           <Grid item xs={12} sm={8} md={6}>
             <Card sx={{ boxShadow: 3, borderRadius: 2 }}>
@@ -199,12 +200,8 @@ function App() {
       )}
 
       {/* Footer */}
-      {/* <Box sx={{ bgcolor: "background.default", padding: "16px" }}>
-        <Typography variant="body2" color="textSecondary" textAlign="center">
-          &copy; 2025 Jal Jeevan Mission. All rights reserved.
-        </Typography>
-      </Box> */}
-    </div>
+      <Footer />
+    </Box>
   );
 }
 
