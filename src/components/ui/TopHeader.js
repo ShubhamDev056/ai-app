@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from "react";
-
 const TopHeader = ({ handleSkipMainContent, toggleTheme, istoggleTheme }) => {
   return (
     <section className="topHeader">
